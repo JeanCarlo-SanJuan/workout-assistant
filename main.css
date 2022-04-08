@@ -1,0 +1,39 @@
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.2fr 0.8fr;
+      grid-template-columns: 0.2fr 0.8fr;
+  padding: 1vh 1vw;
+  grid-gap: 1vh 1vw;
+  width: 100%;
+}
+
+main > section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#current {
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 75%;
+}
+
+#routine {
+  width: 80%;
+  overflow-y: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+/*# sourceMappingURL=main.css.map */

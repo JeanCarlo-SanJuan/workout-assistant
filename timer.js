@@ -1,6 +1,12 @@
 const defaultCount = 30;
 const delay = 1000;
 
+categories = {
+    warmup : "0",
+    conditioning: "1",
+    cooldown: "2"
+}
+
 const timer = {
     container : $("#timer"),
     span : $("#timer-span"),
@@ -9,6 +15,8 @@ const timer = {
     lastcount : defaultCount,
     isRunning : false,
     isEditing : false,
+    category : categories.warmup,
+    set : 1,
     Audio : null,
     re : /\d+/,
     filterInput : function() {
@@ -28,19 +36,19 @@ const timer = {
     , reset: function() {
         timer.count = timer.lastcount
         timer.Audio.currentTime = 0;
+        timer.update()
     }
     , update: function() {
         timer.span.innerText = timer.count
     }
 
     ,countdown : function() {
-        timer.count--
-
         if(timer.count == 0) {
             timer.reset()
+        } else {
+            timer.count--
+            timer.update()
         }
-
-        timer.update()
     }
     , stop: function() {
         clearInterval(timer.isRunning)
@@ -62,27 +70,38 @@ const timer = {
     }
 }
  
-timer.span.addEventListener("input", e => {
+/* timer.span.addEventListener("input", e => {
     setTimeout(timer.filterInput,delay)
-})
+}) */
 
 timer.span.addEventListener("focus", e => {
     timer.isEditing = true;
     timer.stop()
 });
+
 timer.span.addEventListener("focusout", timer.filterInput)
 
 window.addEventListener("keyup", e => {
     switch(e.code) {
         case "Space":
             timer.activate()
-        case "Esc":
-            ""
+            break;
+        case "Escape":
+            timer.stop()
+            timer.reset()
+            break;
+        case "Tab":
+            break;
+        case "Enter":
+            if (timer.isEditing) {
+                timer.span.blur()
+            }
     }
 })
 
 function main() {
     timer.span.innerText = timer.count;
+    
 }
 
 window.addEventListener("load", main)

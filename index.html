@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./class.css">
+    <link rel="stylesheet" href="./nav.css">
+    <link rel="stylesheet" href="./main.css">
     <script src="./altair.min.js" defer></script>
     <script src="./editor.js" defer></script>
     <script src="./player.js" defer></script>
     <script src="./timer.js" defer></script>
+    <script src="./load.js" defer></script>
 </head>
+
 <body>
-    <nav>
-        <div>Create</div>
-        <div>Load</div>
-        <div>Find</div> <!-- Search Query??? -->
-        <div>Save</div>
-    </nav>
+    <header class="theme">
+        <nav id="nav-site" class="flex-row">
+            <i class="icon">+</i>
+            <i class="icon">&#128191;</i>
+            <i class="icon">&#x1F50D;</i> <!-- Search Query??? -->
+            <i class="icon">&#128190;</i>
+        </nav>
+        <nav id="nav-page" class="flex-row">
+            <i class="icon part" id="warm-up">Warm-up</i>
+            <i class="icon part" id="conditioning">Conditioning</i>
+            <i class="icon part" id="cooldown"> &#8987;</i>
+            <i class="icon" id="song-icon"></i>
+            <i class="icon" id="keys">Shortcuts</i>
+        </nav>
+    </header>
     <main>
-        <input type="file" name="" id="bg-picker" accept="audio/*">
-        <div id="song-icon"></div>
-        <div id="timer">
-            <audio src="" id="player"></audio>
-            <div id="timer-span" contenteditable>0</div>
-        </div>
+        <aside class="flex-col" id="preview-routine"></aside>
+        <section>
+            <div id="timer" class="flex-col">
+                <input type="file" id="bg-picker" accept="audio/*">
+                <audio src="" id="player"></audio>
+                <div id="timer-span" contenteditable>0</div>
+            </div>
+            <div id="routine">
+                <img src="" alt="" id="current">
+                <img src="" id="next">
+            </div>
+        </section>
     </main>
-    <footer></footer>
+    <footer class="theme">No music selected</footer>
 </body>
+
 </html>

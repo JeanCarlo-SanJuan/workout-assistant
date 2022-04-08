@@ -1,2 +1,4 @@
 altair.min.js
 sample-routine.json
+*.map
+test*
