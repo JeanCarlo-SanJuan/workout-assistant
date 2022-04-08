@@ -67,13 +67,13 @@ class Routine {
 const routine = new Routine({"warm-up": {
     "sets": 1,
     "items": {
-        "side stretches": "./circuit/lita-lewis-wide-toe-touch.gif",
-        "Knee hugs (L & R)": "./circuit/knee-hugs.gif",
-        "Cross body step kicks" : "./circuit/cross-body-step-kicks.png",
-        "Arm Circles (F & B)" : "./circuit/arm-circles.gif",
-        "Cross Arm stretch (L & R)" : "./circuit/cross-arm-stretch.webp",
-        "Side lunges": "./circuit/side-lunges.gif",
-        "Leg swings" : "./circuit/leg-swings.gif"
+        "side stretches": "./test-circuit/lita-lewis-wide-toe-touch.gif",
+        "Knee hugs (L & R)": "./test-circuit/knee-hugs.gif",
+        "Cross body step kicks" : "./test-circuit/cross-body-step-kicks.png",
+        "Arm Circles (F & B)" : "./test-circuit/arm-circles.gif",
+        "Cross Arm stretch (L & R)" : "./test-circuit/cross-arm-stretch.webp",
+        "Side lunges": "./test-circuit/side-lunges.gif",
+        "Leg swings" : "./test-circuit/leg-swings.gif"
     }
 },
 "conditioning": {
@@ -81,17 +81,17 @@ const routine = new Routine({"warm-up": {
     "items": {
         "Front plank" : "",
         "Russian Twist": "",
-        "Chest Presses": "./circuit/chest-presses.png",
+        "Chest Presses": "./test-circuit/chest-presses.png",
         "Squats": "",
-        "Standing Bicep Curls": "./circuit/bicep-curls.png"
+        "Standing Bicep Curls": "./test-circuit/bicep-curls.png"
     }
 },
 "cooldown": {
     "sets": 1,
     "items": {
-        "Knee-to-chest pose (L & R)": "./circuit/knee-to-chest-pose.webp",
-        "Seated single-leg hamstring stretch (L & R)": "./circuit/seated-single-leg.gif",
-        "Seated Forward Bend": "./circuit/seated-forward-bend.webp",
-        "Hip Flexors": "./circuit/hip-flexor.gif"
+        "Knee-to-chest pose (L & R)": "./test-circuit/knee-to-chest-pose.webp",
+        "Seated single-leg hamstring stretch (L & R)": "./test-circuit/seated-single-leg.gif",
+        "Seated Forward Bend": "./test-circuit/seated-forward-bend.webp",
+        "Hip Flexors": "./test-circuit/hip-flexor.gif"
     }
 }})

@@ -30,16 +30,7 @@ footer {
 
 aside {
     width: 100%;
-}
-
-#timer {
-    text-align: center;
-    font-size: 4em;
-    position: fixed;
-}
-
-#timer[active] {
-    border-color: red;
+    height: 86vh; /* #1: Hard code to fix exercise image size */
 }
 
 #player {
