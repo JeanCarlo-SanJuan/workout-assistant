@@ -41,7 +41,7 @@ input[type="file"] {
     display: none;
 }
 
-#song-icon::after {
+#music-icon::after {
     content: "\1D160";
     font-size: 2em;
 }

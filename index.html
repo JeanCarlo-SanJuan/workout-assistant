@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="./class.css">
     <link rel="stylesheet" href="./nav.css">
     <link rel="stylesheet" href="./main.css">
+    <script src="./const.js"></script>
     <script src="./altair.min.js" defer></script>
-    <script src="./editor.js" defer></script>
+    <script src="./helpers.js" defer></script>
+    <script src="./routine.js" defer></script>
     <script src="./player.js" defer></script>
     <script src="./timer.js" defer></script>
-    <script src="./load.js" defer></script>
 </head>
 
 <body>
@@ -29,25 +30,27 @@
             <i class="icon part" id="warm-up">Warm-up</i>
             <i class="icon part" id="conditioning">Conditioning</i>
             <i class="icon part" id="cooldown"> &#8987;</i>
-            <i class="icon" id="song-icon"></i>
+            <i class="icon" id="music-icon"></i>
             <i class="icon" id="keys">Shortcuts</i>
         </nav>
     </header>
     <main>
-        <aside class="flex-col" id="preview-routine"></aside>
+        <aside class="flex-col" id="routine-preview"></aside>
         <section>
             <div id="timer" class="flex-col">
-                <input type="file" id="bg-picker" accept="audio/*">
-                <audio src="" id="player"></audio>
+                <input type="file" id="music-picker" accept="audio/*">
+                <audio src="" id="music"></audio>
                 <div id="timer-span" contenteditable>0</div>
             </div>
             <div id="routine">
-                <img src="" alt="" id="current">
-                <img src="" id="next">
+                <img src="" alt="" id="routine-current">
+                <img src="" id="routine-next">
             </div>
         </section>
     </main>
-    <footer class="theme">No music selected</footer>
+    <footer class="theme">
+        <div id="music-label">No music selected</div>
+        </footer>
 </body>
 
 </html>
