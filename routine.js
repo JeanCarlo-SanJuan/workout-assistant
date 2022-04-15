@@ -29,7 +29,6 @@ class PartialRoutine {
     }
 }
 
-
 class Routine {
     states = {
         warmup : 0,
@@ -56,7 +55,7 @@ class Routine {
         ["warmup", "conditioning", "cooldown"].map(key => {
             return new PartialRoutine(obj[key])
         }) */
-        this.warmup = new PartialRoutine( obj["warmup"])
+        this.warmup = new PartialRoutine(obj["warmup"])
         this.conditioning = new PartialRoutine(obj["conditioning"])
         this.cooldown = new PartialRoutine(obj["cooldown"])
         console.log(this.state);
@@ -71,7 +70,6 @@ class Routine {
     }
 
     setState(state = null) {
-        console.log(this.state);
         if (state === null) {
             this.state++
         } else {
@@ -80,10 +78,10 @@ class Routine {
         this.state %= this.stateCount
 
         this.setRoutine()
-        this.set_sideBar()
+        this.setSideBar()
     }
 
-    set_sideBar() {
+    setSideBar() {
         this.preview.innerHTML = "";
         for (const exercise of Object.values(this.current.items)) {
             const div = $$("div")
@@ -102,7 +100,7 @@ class Routine {
             this.category %= 3
             this.index = 0
             this.setCount = 0
-            this.set_sideBar()
+            this.setSideBar()
         }
 
         this.update()

@@ -1,3 +1,8 @@
+.theme {
+  background-color: black;
+  color: white;
+}
+
 .flex-col {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,5 +35,14 @@
 i.icon {
   font-style: normal;
   cursor: pointer;
+}
+
+.part {
+  cursor: pointer;
+  padding: 1vh 1vw;
+}
+
+.part[active] {
+  color: red;
 }
 /*# sourceMappingURL=class.css.map */

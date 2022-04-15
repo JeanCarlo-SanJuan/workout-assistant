@@ -1,56 +1,31 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    display: grid;
-    grid-template-rows: 0.1fr 0.8fr 0.1fr;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-}
-
-.theme {
-    background-color: black;
-    color: white;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.1fr 0.8fr 0.1fr;
+      grid-template-rows: 0.1fr 0.8fr 0.1fr;
 }
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
+  top: 0;
+  z-index: 1;
+  display: -ms-grid;
+  display: grid;
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-grid-columns: 0.5fr 0.5fr;
+      grid-template-columns: 0.5fr 0.5fr;
 }
 
 footer {
-    position: sticky;
-    bottom: 0;
-    padding: 1vh 1vw;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  padding: 1vh 1vw;
 }
-
-aside {
-    width: 100%;
-    height: 86vh; /* #1: Hard code to fix exercise image size */
-}
-
-#player {
-    display: none;
-}
-
-input[type="file"] {
-    display: none;
-}
-
-#music-icon::after {
-    content: "\1D160";
-    font-size: 2em;
-}
-
-.part {
-    cursor: pointer;
-    padding: 1vh 1vw;
-}
-
-.part[active] {
-    color: red;
-}
+/*# sourceMappingURL=style.css.map */

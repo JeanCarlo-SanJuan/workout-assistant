@@ -1,0 +1,9 @@
+#timer {
+  text-align: center;
+  font-size: 4em;
+}
+
+#timer[active] {
+  border-color: red;
+}
+/*# sourceMappingURL=timer.css.map */

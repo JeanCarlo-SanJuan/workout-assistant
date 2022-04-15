@@ -14,29 +14,4 @@ main > section {
       grid-template-rows: 0.1fr 0.9fr;
   justify-items: center;
 }
-
-#routine-current {
-  -o-object-fit: contain;
-     object-fit: contain;
-  max-width: 75%;
-}
-
-#routine {
-  overflow-y: hidden;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#timer {
-  text-align: center;
-  font-size: 4em;
-}
-
-#timer[active] test-circuit {
-  border-color: red;
-}
 /*# sourceMappingURL=main.css.map */
