@@ -13,3 +13,9 @@ class $c {
         return $(`${this.root_id}-${child_id}`)
     }
 }
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}

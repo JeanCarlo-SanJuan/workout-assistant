@@ -18,18 +18,23 @@ class Exercise {
 
 class PartialRoutine {
     items = {}
-    constructor({"items" : items, "sets" : sets}) {
+    constructor({"span":span, "items" : items, "sets" : sets}) {
         //Todo: make items from Exercise
+
+        this.span = span
+        this.sets = sets
+        this.len = Object.keys(items).length
 
         for (const [key, val] of Object.entries(items)) {
             this.items[key] = Exercise.parseJSON(key, val)
         }
-        this.sets = sets
-        this.len = Object.keys(items).length
+
     }
 }
 
 class Routine {
+    speechNext = new SpeechSynthesisUtterance("Next");
+
     states = {
         warmup : 0,
         conditioning: 1,
@@ -51,10 +56,7 @@ class Routine {
 
         this.index = index
         this.setCount = setCount
-        /* [this.warmup, this.conditioning, this.cooldown] = 
-        ["warmup", "conditioning", "cooldown"].map(key => {
-            return new PartialRoutine(obj[key])
-        }) */
+
         this.warmup = new PartialRoutine(obj["warmup"])
         this.conditioning = new PartialRoutine(obj["conditioning"])
         this.cooldown = new PartialRoutine(obj["cooldown"])
@@ -82,37 +84,56 @@ class Routine {
     }
 
     setSideBar() {
-        this.preview.innerHTML = "";
-        for (const exercise of Object.values(this.current.items)) {
-            const div = $$("div")
+        removeAllChildNodes(this.preview);
+         
+        const vals =  Object.values(this.current.items);
+        for (let i = 0; i < vals.length; i++) {
+            const exercise = vals[i];
+            const div = $$("div", {}, ["timer-resetter"])
+
             div.innerText = exercise.name
+            div.addEventListener("click", () => {
+                this.index = i;
+                this.update();
+            })
             this.preview.appendChild(div)
         }
+
+        this.update();
     }
 
     nextPic() {
         this.index++
 
-        this.index %= this.current.len
-
-        if (this.setCount == this.current.sets) {
-            this.category++
-            this.category %= 3
-            this.index = 0
-            this.setCount = 0
-            this.setSideBar()
+        if(this.index == this.current.len) {
+            this.setCount++;
+            this.index = 0;
         }
 
+        if (this.setCount == this.current.sets) {
+            this.nextCategory()
+            return true;
+        }
+
+        this.update()
+        return false;
+    }
+
+    nextCategory() {
+        this.setState()
+        this.index = 0
+        this.setCount = 0
+        this.setSideBar()
         this.update()
     }
 
     get_current_exercise() {
-        return Object.entries(this.current.items)[this.index]
+        const exec = Object.entries(this.current.items)[this.index];
+        return exec;
     }
 
     update() {
         const [, exercise] = this.get_current_exercise()
-        console.log(exercise);
         this.children.currentExercise.src = exercise.img;
         this.children.currentExercise.alt = exercise.name;
     }
